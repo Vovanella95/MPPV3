@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belpost | Free Order Price Calculations</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+
+    <header>
+        @Html.ActionLink("Belpost", "Index", "Home") | Order Price Calculator
+    </header>
+
+    <center>
+        
+            @RenderBody()
+        
+
+
+
+        <footer>
+            Все права защищены. Проект был разработан и воссоздан многокультурной командой,
+            в которой переплетатись различные веры, религии и суеверия. Любое неправомерное
+            использование программы тут же ведет за собой карательные меры и смерть. Приятного
+            вам пользования. <br />
+            <center>Copyright (R) @DateTime.Now.Year</center>
+    </footer>
+</center>
+<style>
+
+
+    a
+    {
+
+    }
+
+    a:hover{
+        text-decoration:none;
+    }
+
+    header{
+        padding-left:10px;
+        line-height:50px;
+        font-size:20px;
+        color:#c2c2c2;
+        width:100%; 
+        height:50px; 
+        background-color:#151515;
+    }
+
+    body{
+        margin:0;
+        background-color:#c2c2c2;
+    }
+    footer
+    {
+        padding:5px;
+        max-width:600px;
+        min-width:240px;
+        width:100%;
+        height:100px;
+        color:#393939;
+        text-align:justify;
+    }
+
+    
+
+
+
+</style>
+</body>
+</html>

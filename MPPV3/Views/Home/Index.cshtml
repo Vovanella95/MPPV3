@@ -1,0 +1,95 @@
+﻿@model MPPV3.Models.OrderModel
+
+<div class="body" name="bbody">
+
+
+    <br />
+    <div class="imagelogo">
+        <img src="~/Images/1387829568_belpochta.png" width="240" />
+    </div>
+    <br />
+
+
+
+    @{
+
+        List<SelectListItem> countries = MPPV3.Controllers.HomeController.GetCountryList().Select(w =>
+        {
+            return new SelectListItem() { Text = w.Name };
+        }).ToList();
+
+
+        List<SelectListItem> products = MPPV3.Controllers.HomeController.GetProductList().Select(w =>
+            {
+                return new SelectListItem() { Text = w.Name };
+            }).ToList();
+
+
+
+    }
+
+
+
+    @using (Html.BeginForm("Calculate", "Home", FormMethod.Post))
+    {
+        @Html.Label("Product Category")<br />
+        @Html.DropDownListFor(md => md.product, products)<br />
+        @Html.Label("Destination Country")<br />
+        @Html.DropDownListFor(md => md.country, countries)<br />
+        @Html.Label("Mass")<br />
+        @Html.TextBoxFor(w => w.mass);<br /><br />
+        <div class="MyInput">
+            <input class="MyInput btn btn-primary" type="submit" value="Calculate" /><br /><br />
+        </div>
+    }
+
+
+
+
+    <style>
+        .imagelogo {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .body {
+            width: 100%;
+            min-height: 200px;
+            background-color: white;
+            padding:10px;
+        }
+
+        .body input
+        {
+            width:100%;
+            max-width:600px;
+            border-radius:5px;
+            font-size:18px;
+            padding:5px;
+        }
+
+        .body select
+        {
+            width:100%;
+            max-width:600px;
+            border-radius:5px;
+            padding:10px;
+            font-size:18px;
+        }
+
+        .MyInput
+        {
+            width:200px;
+            background-color: rgb(0,173,239); 
+            border:none; 
+            border-radius:0px;
+            height:40px;
+        }
+
+        .MyInput:hover{
+            background-color: rgb(10,183,249); 
+        }
+
+
+    </style>
+</div>
